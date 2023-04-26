@@ -1,9 +1,9 @@
 <template>
-  <div class="number-animation">
+  <div class="number-scroll">
     <div
       v-for="(char, charIndex) in chars"
       :key="`num-${charIndex}`"
-      class="number-animation__item"
+      class="number-scroll__item"
       :style="{
         width: size - 4 + 'px',
         height: size + 2 + 'px',
@@ -11,7 +11,7 @@
       }"
     >
       <div
-        class="number-animation__item-anim"
+        class="number-scroll__item-anim"
         :style="{
           top: char.top * -1 + 'px',
           transition: `top ${char.countNumbers * speed}s ease-out`,
@@ -97,7 +97,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.number-animation {
+.number-scroll {
   display: flex;
   justify-content: center;
   margin-bottom: rem(10);
